@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papyon Cafe & Lounge - Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo img {
+            max-width: 200px;
+        }
+        .price-list {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #333;
+        }
+        .brand-name {
+            font-size: 32px;
+            text-align: center;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        #qrGenerator {
+            display: none;
+        }
+        @media print {
+            #qrGenerator {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="assets/papyon-logo.png" alt="Papyon Logo">
+    </div>
+    
+    <div class="price-list">
+        <div class="item">
+            <span>Espresso</span>
+            <span>$4.50</span>
+        </div>
+        <div class="item">
+            <span>Cappuccino</span>
+            <span>$5.50</span>
+        </div>
+        <div class="item">
+            <span>Iced Latte</span>
+            <span>$6.00</span>
+        </div>
+        <div class="item">
+            <span>Signature Cocktail</span>
+            <span>$12.00</span>
+        </div>
+        <div class="item">
+            <span>Wine (Glass)</span>
+            <span>$8.00</span>
+        </div>
+        <div class="item">
+            <span>Gourmet Sandwich</span>
+            <span>$14.50</span>
+        </div>
+    </div>
+
+    <!-- QR Code generator section - only visible when generating the QR code -->
+    <div id="qrGenerator">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <div id="qrcode"></div>
+        <script>
+            new QRCode(document.getElementById("qrcode"), {
+                text: window.location.href,
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        </script>
+    </div>
+</body>
+</html>
