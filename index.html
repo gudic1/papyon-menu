@@ -88,13 +88,15 @@
         </div>
     </div>
 
-    <!-- QR Code generator section - only visible when generating the QR code -->
     <div id="qrGenerator">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
         <div id="qrcode"></div>
         <script>
+            // Your actual GitHub Pages URL
+            const menuUrl = 'https://gudic1.github.io/papyon-menu';
+            
             new QRCode(document.getElementById("qrcode"), {
-                text: window.location.href,
+                text: menuUrl,
                 width: 200,
                 height: 200,
                 colorDark: "#000000",
@@ -103,5 +105,3 @@
             });
         </script>
     </div>
-</body>
-</html>
